@@ -1,0 +1,18 @@
+@import "../global/_variables.css";
+@font-face {
+    font-family: SkyTextMedium;
+    src: url('../assets/fonts/SkyText_W_Md.eot?#iefix') format('embedded-opentype'), 
+         /* url('../assets/fonts/SkyText_W_Md.woff2') format('woff2'), */
+         url('../assets/fonts/SkyText_W_Md.woff') format('woff'),
+         url('../assets/fonts/SkyText_W_Md.ttf')  format('truetype')
+  }
+  @font-face {
+    font-family: SkyTextLight;
+    src: url('../assets/fonts/SkyText_W_Lt.woff') format('woff'),
+         url('../assets/fonts/SkyText_W_Lt.ttf')  format('truetype')
+  }
+  @font-face {
+    font-family: SkyTextRegular;
+    src: url('../assets/fonts/SkyText_W_Rg.woff') format('woff'),
+         url('../assets/fonts/SkyText_W_Rg.ttf')  format('truetype')
+  }
