@@ -1,5 +1,4 @@
-
-import MenuButton  from "../components/MenuButton";
+import MenuButton from "./MenuButton";
 const Menu = props => {
   return (
     <div>
