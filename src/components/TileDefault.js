@@ -1,4 +1,4 @@
-import React, {ReactNode, useRef} from "react";
+import * as React from "react"
 import { useEffect, useState } from "react"
 
 // @ts-ignore
@@ -9,10 +9,8 @@ import {
     useAnimation,
     Frame,
     Stack,
-    addPropertyControls,
-    ControlType,
 } from "framer"
-
+// import { url } from "framer/resource"
 // import { createStore } from "../setter"
 
 // export const useSwitcherStore = createStore({
@@ -23,65 +21,42 @@ import {
 //     tileWidth: 0,
 //     tileHeight: 0,
 // })
-interface Props {
-    children: ReactNode;
-    to:string;
-    name:string;
-    ref:string;
-    fontsize:number,
-    image:string,
-    logo:string,
-    text1:string,
-    text2:string,
-    radius:number,
-    progress:number,
-    gradient:string,
-    showLogo:boolean,
-    showTitle:boolean,
-    showSubtitle:boolean,
-    showProgress:boolean,
-    switchName:string,
-    scale:number,
-    onKeyPress:Event,
-    onTap:Event,
-    focusKey:number,
-    width:number,
-    height:number,
-  }
-export default function TileSwitcher({children, ...props }: Props) {
-    // const {
-    //     logo,
-    //     text1,
-    //     text2,
-    //     radius,
-    //     progress,
-    //     gradient,
-    //     showLogo,
-    //     showTitle,
-    //     showSubtitle,
-    //     showProgress,
-    //     switchName,
-    //     scale,
-    //     onKeyPress,
-    //     onTap,
-    //     focusKey,
-    //     ...rest
-    // } = props
-    const ref = useRef<HTMLDivElement>(null)
+
+export default function TileSwitcher(props) {
+    const {
+        logo,
+        text1,
+        text2,
+        radius,
+        progress,
+        gradient,
+        showLogo,
+        showTitle,
+        showSubtitle,
+        showProgress,
+        switchName,
+        children,
+        scale,
+        onKeyPress,
+        onTap,
+        focusKey,
+        ...rest
+    } = props
+    const ref = React.useRef(null)
     const controls = useAnimation()
     const controls2 = useAnimation()
     const controls3 = useAnimation()
     // const switchControls = useSwitch()
     // const [storeSwitcher, setSwitcherStore] = useSwitcherStore()
-    const [stateProgress, setProgress] = useState(props.showProgress)
+    const [stateProgress, setProgress] = useState(showProgress)
 
-    // const transition = {
-    //     yoyo: 1,
-    //     duration: 0.3,
-    //     type: "spring",
-    //     damping: 40,
-    //     stiffness: 300,
-    // }
+    const transition = {
+        yoyo: 1,
+        duration: 0.3,
+        type: "spring",
+        damping: 40,
+        stiffness: 300,
+    }
     const transition2 = {
         duration: 0.35,
         type: "spring",
@@ -95,14 +70,12 @@ export default function TileSwitcher({children, ...props }: Props) {
             console.log("Progress:" + props.showProgress)
         }
     }, [])
-    
-    const { focused } = useFocusable({
-        elementRef: ref,
+    // const { focused } = useFocusable(focusKey, ref, {
         // onKeyPress: (event) => {
         //     if (event.key === "Enter") {
         //         let childname = children[0]?.props.name
         //         childname &&
-        //             switchControls.setSwitchState(switchName, childname)
+        //             // switchControls.setSwitchState(switchName, childname)
         //         console.log("KeyPressed: " + childname)
         //         controls.start({
         //             scale: 0.9,
@@ -112,22 +85,22 @@ export default function TileSwitcher({children, ...props }: Props) {
         //         event.stopPropagation()
         //     }
         // },
-        onFocus: () => {
-            // let tileParameters = ref.current.getBoundingClientRect()
+        // onFocus: () => {
+        //     let tileParameters = ref.current.getBoundingClientRect()
 
-            controls.start({
-                scale: 1.08,
-                boxShadow: "16px 16px 20px 0px rgba(0, 0, 0, 0.12)",
-                opacity: 1,
-                transition: transition2,
-            })
-            controls2.start({
-                opacity: 1,
-            })
-            controls3.start({
-                opacity: 1,
-                transition: transition2,
-            })
+        //     controls.start({
+        //         scale: 1.08,
+        //         boxShadow: "16px 16px 20px 0px rgba(0, 0, 0, 0.12)",
+        //         opacity: 1,
+        //         transition: transition2,
+        //     })
+        //     controls2.start({
+        //         opacity: 1,
+        //     })
+        //     controls3.start({
+        //         opacity: 1,
+        //         transition: transition2,
+        //     })
             // setSwitcherStore({
             //     tile: focusKey,
             //     tileFocused: true,
@@ -137,26 +110,26 @@ export default function TileSwitcher({children, ...props }: Props) {
             //     tileHeight: tileParameters.height,
             // })
             // console.log(`${storeSwitcher.tile} is Focused`)
-        },
-        onBlur: () => {
-            controls.start({
-                scale: 1,
-                boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.12)",
-                transition: transition2,
-                // opacity: 0.85,
-            })
-            controls2.start({
-                opacity: 0.5,
-                transition: transition2,
-            })
-            controls3.start({
-                opacity: 0.5,
-                transition: transition2,
-            })
-            // setSwitcherStore({ tileFocused: false })
-            // console.log(`${storeSwitcher.tile} is Blured`)
-        },
-    })
+        // },
+    //     onBlur: () => {
+    //         controls.start({
+    //             scale: 1,
+    //             boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.12)",
+    //             transition: transition2,
+    //             // opacity: 0.85,
+    //         })
+    //         controls2.start({
+    //             opacity: 0.5,
+    //             transition: transition2,
+    //         })
+    //         controls3.start({
+    //             opacity: 0.5,
+    //             transition: transition2,
+    //         })
+    //         // setSwitcherStore({ tileFocused: false })
+    //         // console.log(`${storeSwitcher.tile} is Blured`)
+    //     },
+    // })
 
     return (
         <Frame
@@ -167,8 +140,8 @@ export default function TileSwitcher({children, ...props }: Props) {
             borderRadius={props.radius}
             overflow="hidden"
             animate={controls}
-            // onKeyPress={onKeyPress}
-            // onTap={props.onTap}
+            onKeyPress={onKeyPress}
+            onTap={onTap}
             style={{
                 opacity: 1,
                 boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.12)",
@@ -188,7 +161,7 @@ export default function TileSwitcher({children, ...props }: Props) {
                 backgroundColor={"transparent"}
                 width={"100%"}
                 height={"100%"}
-                image={props.gradient}
+                image={gradient}
                 style={{
                     opacity: 1,
                 }}
@@ -196,7 +169,7 @@ export default function TileSwitcher({children, ...props }: Props) {
             <Frame
                 width={props.width}
                 height={props.height}
-                borderRadius={props.radius}
+                borderRadius={radius}
                 overflow="hidden"
                 animate={controls2}
                 backgroundColor={"transparent"}
@@ -217,7 +190,7 @@ export default function TileSwitcher({children, ...props }: Props) {
                 height={"100%"}
                 borderRadius={props.radius}
                 animate={controls2}
-                image={props.gradient}
+                image={gradient}
                 style={{
                     opacity: 0.5,
                     border: 1,
@@ -228,6 +201,7 @@ export default function TileSwitcher({children, ...props }: Props) {
                         "radial-gradient(400% 100% at 100% 0%, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.15) 100%)",
                 }}
             />
+
             <Stack
                 distribution="end"
                 alignment="start"
@@ -246,10 +220,10 @@ export default function TileSwitcher({children, ...props }: Props) {
                 }}
             >
                 <Frame
-                    image={props.logo}
+                    image={logo}
                     width={365}
                     height={75}
-                    visible={props.showLogo}
+                    visible={showLogo}
                     left={0}
                     style={{ backgroundColor: "transparent" }}
                 />
@@ -257,7 +231,7 @@ export default function TileSwitcher({children, ...props }: Props) {
                 <Frame
                     width="100%"
                     height="auto"
-                    visible={props.showTitle}
+                    visible={showTitle}
                     style={{
                         alignItems: "start",
                         justifyContent: "start",
@@ -268,12 +242,12 @@ export default function TileSwitcher({children, ...props }: Props) {
                         textAlign: "left",
                     }}
                 >
-                    {props.text1}
+                    {text1}
                 </Frame>
                 <Frame
                     width="100%"
                     height="auto"
-                    visible={props.showSubtitle}
+                    visible={showSubtitle}
                     style={{
                         justifyContent: "start",
                         background: "transparent",
@@ -283,7 +257,7 @@ export default function TileSwitcher({children, ...props }: Props) {
                         textAlign: "left",
                     }}
                 >
-                    {props.text2}
+                    {text2}
                 </Frame>
                 <Frame
                     width={"100%"}
@@ -298,7 +272,7 @@ export default function TileSwitcher({children, ...props }: Props) {
                         backgroundColor={"rgba(255,255,255,0.1)"}
                     ></Frame>
                     <Frame
-                        width={props.progress + "%"}
+                        width={progress + "%"}
                         height={6}
                         borderRadius={3}
                         backgroundColor={"rgb(0, 135, 255)"}
@@ -323,75 +297,4 @@ TileSwitcher.defaultProps = {
     switchName: "sharedSwitch",
 }
 
-// addPropertyControls(TileSwitcher, {
-//     logo: {
-//         title: "Channel Logo",
-//         type: ControlType.Image,
-//     },
 
-//     text1: {
-//         title: "Title",
-//         type: ControlType.String,
-//         defaultValue: "Programme Title",
-//     },
-//     text2: {
-//         title: "Subline",
-//         type: ControlType.String,
-//         defaultValue: "Subtitle/Tag/Subline",
-//     },
-//     image: {
-//         title: "Tile Image",
-//         type: ControlType.Image,
-//     },
-//     radius: {
-//         title: "Radius",
-//         type: ControlType.Number,
-//         defaultValue: 6,
-//     },
-//     showLogo: {
-//         title: "Show Title",
-//         type: ControlType.Boolean,
-//         defaultValue: true,
-//     },
-//     showTitle: {
-//         title: "Show Title",
-//         type: ControlType.Boolean,
-//         defaultValue: true,
-//     },
-//     showSubtitle: {
-//         title: "Show Subtitle",
-//         type: ControlType.Boolean,
-//         defaultValue: true,
-//     },
-//     showProgress: {
-//         title: "Show Progres",
-//         type: ControlType.Boolean,
-//         defaultValue: true,
-//     },
-//     progress: {
-//         title: "Progress",
-//         type: ControlType.Number,
-//     },
-//     switchName: {
-//         title: "Switch Name",
-//         type: ControlType.String,
-//         defaultValue: "sharedSwitch",
-//     },
-//     children: {
-//         title: "On Enter",
-//         type: ControlType.ComponentInstance,
-//     },
-//     focusKey: {
-//         type: ControlType.String,
-//         defaultValue: "",
-//     },
-//     onKeyPress: {
-//         type: ControlType.EventHandler,
-//     },
-//     onFocus: {
-//         type: ControlType.EventHandler,
-//     },
-//     onTap: {
-//         type: ControlType.EventHandler,
-//     },
-// })
