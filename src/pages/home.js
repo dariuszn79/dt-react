@@ -1,9 +1,9 @@
-import Title from "../components/Title"
-import RailSwitcher from "../components/RailSwitcher"
+import PageDescription from "../components/PageDescription"
+import PageTitle from "../components/PageTitle"
 const Home = (props) =>
-  <div>
-      <Title title={props.title} text={props.text}/>
-      {/* <RailSwitcher/> */}
+<div style={{display:"block"}}>
+    <PageTitle text={props.title}/>
+    <PageDescription  text={props.text}/>
   </div>;
 
 export default Home;
