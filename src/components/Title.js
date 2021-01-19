@@ -2,7 +2,7 @@ const Title = props => {
     return (
       <div>
           <h1>{props.title}</h1>
-          <h4>{props.text}</h4>
+          <p>{props.text}</p>
       </div>
     );
   };
