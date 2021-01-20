@@ -4,17 +4,18 @@ import styled from 'styled-components'
 import {useHistory } from "react-router-dom";
 import { useFocusable } from "react-sunbeam";
 
-const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
-
-const thumbnailVariants = {
-  initial: { scale: 0.8, opacity: 0 },
-  enter: { scale: 1, opacity: 1, transition },
-  exit: {
-    scale: 1.3,
-    opacity: 0,
-    transition
-  }
-};
+const transitionIn = { duration: 1, ease: [1, 0.16, 0, 0.33]};
+const transitionOut = { duration:1, ease: [0.33, 0, 0.16, 1]};
+const transition = { duration: 0.5, ease: [0.33, 0, 0.16, 1] };
+const PageTransition = {
+    initial: { scale: 0.8, opacity: 0 },
+    enter: { scale: 1, opacity: 1, transition },
+    exit: {
+      scale: 1.1,
+      opacity: 0,
+      transition: transition 
+    }
+  };
 interface Props {
   children: ReactNode;
   to:string;
@@ -47,7 +48,7 @@ function TileSwicther({children, ...props }: Props) {
   
     }
     return (
-        <motion.div variants={thumbnailVariants} style={{transformOrigin:" 50% 50%"}}>
+        <motion.div variants={PageTransition} style={{transformOrigin:" 50% 50%"}}>
             <Tile ref={ref} onClick={handleClick} style={{ border: focused ? "2px solid var(--colors-white-24)" : "2px solid transparent" }}>
             {props.name}
             </Tile>
@@ -64,7 +65,7 @@ const Tile = styled.div`
   box-shadow: calc(var(--elevation-lrg-0-offset-x)*1px) calc(var(--elevation-lrg-0-offset-y)*1px) 30px calc(var(--elevation-lrg-0-spread)*1px) var(--elevation-lrg-0-color),
   calc(var(--elevation-lrg-1-offset-x)*1px) calc(var(--elevation-lrg-1-offset-y)*1px) calc(var(--elevation-lrg-1-radius)*1px) calc(var(--elevation-lrg-1-spread)*1px)  var(--elevation-lrg-1-color) ;
   color:var(--colors-white-100);
-  margin: 0 1em;
+  margin: 0 24px 0 0;
   border-radius:calc(var(--radii-sml-radius)*1px);
   padding: 0.25em 1em;
   outline:none;

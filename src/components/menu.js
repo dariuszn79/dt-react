@@ -1,7 +1,7 @@
 import MenuButton from "./MenuButton";
 const Menu = props => {
   return (
-    <div>
+    <div style={{display:"flex"}}>
       <MenuButton name={"Home"} to={"/"} />
       <MenuButton name={"Movies"} to={"/movies"}/>
       <MenuButton name={"TV Shows"} to={"tvshows"}/>

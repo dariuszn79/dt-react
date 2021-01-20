@@ -2,16 +2,17 @@ import { motion } from "framer-motion";
 import PageDescription from "../components/PageDescription"
 import PageTitle from "../components/PageTitle"
 
-const transitionIn = { duration: 0.6, ease: [0.33, 0, 0.16, 1], staggerChildren: 0.25};
-const transitionOut = { duration: 0.6, ease: [0.33, 0, 0.16, 1]};
+const transitionIn = { duration: 0.5, ease: [1, 0.16, 0, 0.33]};
+const transitionOut = { duration:0.5, ease: [0.33, 0, 0.16, 1]};
 
+const transition = { duration: 1, ease: [0.33, 0, 0.16, 1], staggerChildren: 0.3 };
 const PageTransition = {
-  initial: { scale: 0.9, opacity: 0 },
-  enter: { scale: 1, opacity: 1, transitionIn },
+  initial: { scale: 0.8, opacity: 0 },
+  enter: { scale: 1, opacity: 1, transition, delay:-0.25 },
   exit: {
-    scale: 1.3,
+    scale: 1.1,
     opacity: 0,
-    transition: transitionOut 
+    transition: { duration: 1.5, ...transition }
   }
 };
 const Home = (props) =>

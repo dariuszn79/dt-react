@@ -2,21 +2,16 @@ import React, {ReactNode, useRef} from "react";
 import styled from 'styled-components'
 import {useHistory } from "react-router-dom";
 import { useFocusable } from "react-sunbeam";
+import '../global/_variables.css';
 interface Props {
   children: ReactNode;
   to:string;
   name:string;
   ref:string;
   onKeyPress:KeyboardEvent;
-
 }
 
 function MenuButton({children, ...props }: Props) {
-  const{
-
-    ...rest
-  }=props
-
   const history = useHistory();
   const ref = useRef<HTMLButtonElement>(null)
     const { focused } = useFocusable({
@@ -31,7 +26,7 @@ function MenuButton({children, ...props }: Props) {
     })
      const handleClick=()=> {
       history.push(props.to);
-  
+
     }
     return (
       <Button ref={ref} onClick={handleClick} style={{ border: focused ? "2px solid var(--colors-white-24)" : "2px solid transparent", }}>
