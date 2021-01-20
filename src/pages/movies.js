@@ -1,10 +1,13 @@
 import PageDescription from "../components/PageDescription"
 import PageTitle from "../components/PageTitle"
+import RailSwitcher from "../components/RailSwitcher";
+import TileSwitcher from "../components/TileDefault"
 
 const Movies = (props) => 
   <div>
   <PageTitle text={props.title}/>
-       <PageDescription  text={props.text}/>
+  <RailSwitcher/>
+    
   </div>;
 export default Movies;
 

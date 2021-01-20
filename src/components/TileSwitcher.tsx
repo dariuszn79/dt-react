@@ -8,17 +8,11 @@ interface Props {
   name:string;
   ref:string;
   onKeyPress:KeyboardEvent;
-
 }
 
-function MenuButton({children, ...props }: Props) {
-  const{
-
-    ...rest
-  }=props
-
+function TileSwicther({children, ...props }: Props) {
   const history = useHistory();
-  const ref = useRef<HTMLButtonElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
     const { focused } = useFocusable({
         elementRef: ref,
         onKeyPress(event) {
@@ -28,21 +22,27 @@ function MenuButton({children, ...props }: Props) {
               
             }
         },
+        onBlur(event){
+
+        },
+        onFocus(event){
+
+        }
     })
      const handleClick=()=> {
       history.push(props.to);
   
     }
     return (
-      <Button ref={ref} onClick={handleClick} style={{ border: focused ? "2px solid var(--colors-white-24)" : "2px solid transparent", }}>
+      <Tile ref={ref} onClick={handleClick} style={{ border: focused ? "2px solid var(--colors-white-24)" : "2px solid transparent" }}>
       {props.name}
-      </Button>
+      </Tile>
   );
 };
 
-export default MenuButton;
+export default TileSwicther;
 
-const Button = styled.button`
+const Tile = styled.div`
   font-family:var(---typography-h-5-font-size);
   font-size:var(----typography-h-5-font-size);
   background: var(--colors-white-6);
@@ -52,6 +52,9 @@ const Button = styled.button`
   margin: 0 1em;
   border-radius:calc(var(--radii-sml-radius)*1px);
   padding: 0.25em 1em;
-  outline:none
+  outline:none;
+  height: 234px;
+  width: 414px;
+  display:block;
 `
 

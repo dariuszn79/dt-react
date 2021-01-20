@@ -1,8 +1,7 @@
-import TileSwitcher from "./TileSwitcher";
-
+import TileSwitcher from "./TileSwitcher"
 
 const RailSwitcher = () => 
-  <div style={{display:"flex", flexDirection:"row",  width:"900px", height:"auto", overflowX:"scroll", overflowY:"visible"}} >
+  <div style={{display:"inline-flex"}} >
     <TileSwitcher/>
     <TileSwitcher/>
     <TileSwitcher/>
