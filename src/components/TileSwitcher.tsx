@@ -1,7 +1,20 @@
 import React, {ReactNode, useRef} from "react";
+import { motion } from "framer-motion";
 import styled from 'styled-components'
 import {useHistory } from "react-router-dom";
 import { useFocusable } from "react-sunbeam";
+
+const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
+
+const thumbnailVariants = {
+  initial: { scale: 0.8, opacity: 0 },
+  enter: { scale: 1, opacity: 1, transition },
+  exit: {
+    scale: 1.3,
+    opacity: 0,
+    transition
+  }
+};
 interface Props {
   children: ReactNode;
   to:string;
@@ -34,9 +47,11 @@ function TileSwicther({children, ...props }: Props) {
   
     }
     return (
-      <Tile ref={ref} onClick={handleClick} style={{ border: focused ? "2px solid var(--colors-white-24)" : "2px solid transparent" }}>
-      {props.name}
-      </Tile>
+        <motion.div variants={thumbnailVariants} style={{transformOrigin:" 50% 50%"}}>
+            <Tile ref={ref} onClick={handleClick} style={{ border: focused ? "2px solid var(--colors-white-24)" : "2px solid transparent" }}>
+            {props.name}
+            </Tile>
+        </motion.div>
   );
 };
 
