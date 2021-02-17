@@ -34,6 +34,7 @@ function MenuButton({ children, ...props }: Props) {
       onClick={handleClick}
       style={{
         margin: 20,
+        color: focused ? "var(--colors-white-100)" : "var(--colors-white-24)",
         border: focused
           ? "2px solid var(--colors-white-24)"
           : "2px solid transparent",
