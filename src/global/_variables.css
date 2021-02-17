@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 19 Jan 2021 15:15:45 GMT
+ * Generated on Wed, 17 Feb 2021 12:44:56 GMT
  */
 
 :root {
@@ -32,7 +32,10 @@
   --typography-h-1-font-size: 120;
   --typography-h-1-text-decoration: none;
   --typography-h-1-font-family: Sky Text;
-  --typography-h-1-font-style: Light;
+  --typography-h-1-font-weight: 300;
+  --typography-h-1-font-style: normal;
+  --typography-h-1-font-stretch: normal;
+  --typography-h-1-font-style-old: Light;
   --typography-h-1-letter-spacing: 0;
   --typography-h-1-line-height: normal;
   --typography-h-1-paragraph-indent: 0;
@@ -41,7 +44,10 @@
   --typography-h-2-font-size: 50;
   --typography-h-2-text-decoration: none;
   --typography-h-2-font-family: Sky Text;
-  --typography-h-2-font-style: Regular;
+  --typography-h-2-font-weight: 400;
+  --typography-h-2-font-style: normal;
+  --typography-h-2-font-stretch: normal;
+  --typography-h-2-font-style-old: Regular;
   --typography-h-2-letter-spacing: 0;
   --typography-h-2-line-height: 56;
   --typography-h-2-paragraph-indent: 0;
@@ -50,7 +56,10 @@
   --typography-h-3-font-size: 32;
   --typography-h-3-text-decoration: none;
   --typography-h-3-font-family: Sky Text;
-  --typography-h-3-font-style: Regular;
+  --typography-h-3-font-weight: 400;
+  --typography-h-3-font-style: normal;
+  --typography-h-3-font-stretch: normal;
+  --typography-h-3-font-style-old: Regular;
   --typography-h-3-letter-spacing: 0;
   --typography-h-3-line-height: 36;
   --typography-h-3-paragraph-indent: 0;
@@ -59,7 +68,10 @@
   --typography-h-4-font-size: 32;
   --typography-h-4-text-decoration: none;
   --typography-h-4-font-family: Sky Text;
-  --typography-h-4-font-style: Medium;
+  --typography-h-4-font-weight: 500;
+  --typography-h-4-font-style: normal;
+  --typography-h-4-font-stretch: normal;
+  --typography-h-4-font-style-old: Medium;
   --typography-h-4-letter-spacing: 0;
   --typography-h-4-line-height: 36;
   --typography-h-4-paragraph-indent: 0;
@@ -68,7 +80,10 @@
   --typography-h-5-font-size: 28;
   --typography-h-5-text-decoration: none;
   --typography-h-5-font-family: Sky Text;
-  --typography-h-5-font-style: Medium;
+  --typography-h-5-font-weight: 500;
+  --typography-h-5-font-style: normal;
+  --typography-h-5-font-stretch: normal;
+  --typography-h-5-font-style-old: Medium;
   --typography-h-5-letter-spacing: 0;
   --typography-h-5-line-height: 32;
   --typography-h-5-paragraph-indent: 0;
@@ -77,7 +92,10 @@
   --typography-h-6-font-size: 26;
   --typography-h-6-text-decoration: none;
   --typography-h-6-font-family: Sky Text;
-  --typography-h-6-font-style: Medium;
+  --typography-h-6-font-weight: 500;
+  --typography-h-6-font-style: normal;
+  --typography-h-6-font-stretch: normal;
+  --typography-h-6-font-style-old: Medium;
   --typography-h-6-letter-spacing: 0;
   --typography-h-6-line-height: 30;
   --typography-h-6-paragraph-indent: 0;
@@ -86,7 +104,10 @@
   --typography-paragraph-font-size: 32;
   --typography-paragraph-text-decoration: none;
   --typography-paragraph-font-family: Sky Text;
-  --typography-paragraph-font-style: Regular;
+  --typography-paragraph-font-weight: 400;
+  --typography-paragraph-font-style: normal;
+  --typography-paragraph-font-stretch: normal;
+  --typography-paragraph-font-style-old: Regular;
   --typography-paragraph-letter-spacing: 0;
   --typography-paragraph-line-height: 42;
   --typography-paragraph-paragraph-indent: 0;
@@ -128,4 +149,10 @@
   --elevation-lrg-1-offset-x: 0;
   --elevation-lrg-1-offset-y: 20;
   --elevation-lrg-1-spread: 0;
+  --elevation-xlrg-type: dropShadow;
+  --elevation-xlrg-radius: 50;
+  --elevation-xlrg-color: rgba(0, 0, 0, 0.25);
+  --elevation-xlrg-offset-x: 0;
+  --elevation-xlrg-offset-y: 25;
+  --elevation-xlrg-spread: 0;
 }
