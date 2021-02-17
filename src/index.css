@@ -19,48 +19,5 @@ html, body {
   overflow: hidden;
   padding:56px 96px 56px 96px; 
 }
-h1{
-  font-family: var(--typography-h-1-font-family);
-  font-weight: var(--typography-h-1-font-style);
-  font-size: calc(var(--typography-h-1-font-size)*1px);
-  line-height: calc(var(--typography-h-1-line-height)*1px);
-  color: var(--colors-text);
-
-}
-h2{
-  font-family: var(--typography-h-2-font-family);
-  font-weight: var(--typography-h-2-font-style);
-  font-size: calc(var(--typography-h-2-font-size)*1px);
-  line-height: calc(var(--typography-h-2-line-height)*1px);
-  color: var(--colors-text);
-}
-h3{
-  font-family: var(--typography-h-3-font-family);
-  font-weight: var(--typography-h-3-font-style);
-  font-size: calc(var(--typography-h-3-font-size)*1px);
-  line-height: calc(var(--typography-h-3-line-height)*1px);
-  color: var(--colors-text);
-}
-h4{
-  font-family: var(--typography-h-4-font-family);
-  font-weight: var(--typography-h-4-font-style);
-  font-size: calc(var(--typography-h-4-font-size)*1px);
-  line-height: calc(var(--typography-h-3-line-height)*1px);
-  color: var(--colors-text);
-}
-h5{
-  font-family: var(--typography-h-5-font-family);
-  font-weight: var(--typography-h-5-font-style);
-  font-size: calc(var(--typography-h-5-font-size)*1px);
-  line-height: calc(var(--typography-h-5-line-height)*1px);
-  color: var(--colors-text);
-}
-p{
-  font-family: var(--typography-paragraph-font-family);
-  font-weight: var(--typography-paragraph-font-style);
-  font-size: calc(var(--typography-paragraph-font-size)*1px);
-  line-height: calc(var(--typography-paragraph-line-height)*1px);
-  color: var(--colors-text);
-}
 
 

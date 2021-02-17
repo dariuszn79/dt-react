@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ixd-group/nowtv-components": "^0.0.3",
+    "@ixd-group/nowtv-components-react": "^0.0.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -13,6 +15,7 @@
     "framer": "^1.2.12",
     "framer-motion": "^3.2.1",
     "gsap": "^3.6.0",
+    "immer": "^8.0.1",
     "react": "^16.14.0",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
