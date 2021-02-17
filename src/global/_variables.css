@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 17 Feb 2021 12:44:56 GMT
+ * Generated on Wed, 17 Feb 2021 14:01:06 GMT
  */
 
 :root {
@@ -25,10 +25,11 @@
   --radii-lrg-radii-bottom-right: 12;
   --radii-lrg-radii-bottom-left: 12;
   --radii-lrg-smoothing: 0;
+  --primary-100: rgba(255, 255, 255, 1);
   --colors-white-6: rgba(255, 255, 255, 0.06);
   --colors-white-24: rgba(255, 255, 255, 0.24);
   --colors-white-100: rgba(255, 255, 255, 1);
-  --colors-text: rgba(252, 85, 255, 1);
+  --colors-text: rgba(85, 255, 163, 1);
   --typography-h-1-font-size: 120;
   --typography-h-1-text-decoration: none;
   --typography-h-1-font-family: Sky Text;
