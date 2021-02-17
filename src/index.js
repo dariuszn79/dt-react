@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-
+import {defineCustomElements} from "@ixd-group/nowtv-components"
 
 import './index.css';
 import Menu from "./components/Menu";
@@ -56,6 +56,6 @@ const App = () => (
 
   const rootElement = document.getElementById("app");
   ReactDOM.render(<SunbeamProvider focusManager={focusManager}><App /></SunbeamProvider>, rootElement);
-
+  defineCustomElements()
 
 
