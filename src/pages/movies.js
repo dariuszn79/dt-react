@@ -16,7 +16,7 @@ const PageTransition = {
   }
 };
 const Movies = (props) => 
-  <div>
+<div style={{display:"block", width:"60%"}}>
      <motion.div
         initial="initial"
         animate="enter"

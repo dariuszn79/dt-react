@@ -16,7 +16,7 @@ const PageTransition = {
   }
 };
 const TVShows = (props) => 
-<div style={{display:"block"}}>
+<div style={{display:"block", width:"60%"}}>
     <motion.div
         initial="initial"
         animate="enter"
