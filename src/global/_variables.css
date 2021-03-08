@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 25 Feb 2021 14:29:45 GMT
+ * Generated on Mon, 08 Mar 2021 10:58:56 GMT
  */
 
 :root {
@@ -29,7 +29,7 @@
   --colors-white-6: rgba(255, 255, 255, 0.06);
   --colors-white-24: rgba(255, 255, 255, 0.24);
   --colors-white-100: rgba(255, 255, 255, 1);
-  --colors-text: rgba(221, 85, 255, 1);
+  --colors-text: rgba(39, 255, 48, 1);
   --typography-h-1-font-size: 120;
   --typography-h-1-text-decoration: none;
   --typography-h-1-font-family: Sky Text;
