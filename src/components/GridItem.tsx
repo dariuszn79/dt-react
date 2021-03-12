@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { useFocusable } from "react-sunbeam";
 import "../global/_variables.css";
-import { NowtvButton } from "@ixd-group/nowtv-components-react";
 interface Props {
   children: ReactNode;
   to: string;
@@ -12,7 +11,7 @@ interface Props {
   onKeyPress: KeyboardEvent;
 }
 
-function MenuButton({ children, name, ...props }: Props) {
+function GridItem({ children, ...props }: Props) {
   const history = useHistory();
   const ref = useRef(null);
   const { focused } = useFocusable({
@@ -28,25 +27,21 @@ function MenuButton({ children, name, ...props }: Props) {
     history.push(props.to);
   };
   return (
-    <NowtvButton
+    <Button
       ref={ref}
-      text={name}
       onClick={handleClick}
       style={{
-        margin: 20,
-        color: focused ? "var(--colors-white-100)" : "var(--colors-white-24)",
         border: focused
           ? "2px solid var(--colors-white-24)"
           : "2px solid transparent",
       }}
-    />
-    // <Button ref={ref} onClick={handleClick} style={{ border: focused ? "2px solid var(--colors-white-24)" : "2px solid transparent", }}>
-    // {props.name}
-    // </Button>
+    >
+      {props.name}
+    </Button>
   );
 }
 
-export default MenuButton;
+export default GridItem;
 
 const Button = styled.button`
   font-family: var(---typography-h-5-font-size);
@@ -60,7 +55,7 @@ const Button = styled.button`
       calc(var(--elevation-lrg-1-radius) * 1px)
       calc(var(--elevation-lrg-1-spread) * 1px) var(--elevation-lrg-1-color);
   color: var(--colors-white-100);
-  margin: 0 1em;
+  margin: 2px 0em;
   border-radius: calc(var(--radii-sml-radius) * 1px);
   padding: 0.25em 1em;
   outline: none;

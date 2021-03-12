@@ -9,6 +9,7 @@ import Menu from "./components/Menu";
 import Home from "./pages/home"
 import Movies from "./pages/movies"
 import TVShows from "./pages/tvshows"
+import TVGuide from "./pages/tvguide"
 import { SunbeamProvider, FocusManager } from "react-sunbeam"
 const focusManager = new FocusManager({
   initialFocusPath: ["menuContainer", "menuItem1"],
@@ -46,6 +47,7 @@ const App = () => (
             <Route exact path="/" component={Home} />
             <Route exact path="/movies" component={Movies} />
             <Route exact path="/tvshows" component={TVShows} />
+            <Route exact path="/tvguide" component={TVGuide} />
           </Switch>
         </AnimatePresence>
       )}
